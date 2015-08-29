@@ -1,7 +1,10 @@
+.contenedor{
+
+}
 .logo{
     width: 90px;
     height: 60px;
-    background-color: gey;
+    background-color:#444444;
 }
 .main{
     height: 300px;
@@ -20,7 +23,7 @@
     display: inline-block;
     width: 255px;
     /*border: solid 1px mediumvioletred;*/
-    margin-right: 20px;
-    margin-left: 20px;
+    margin-right: 15px;
+    margin-left: 15px;
     background-color: #F0F0F0;
 }
