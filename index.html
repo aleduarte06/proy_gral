@@ -4,38 +4,64 @@
     <meta charset="UTF-8">
     <title>Proyecto gral</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
     <script src="js/angular.js"></script>
     <script src="js/angular-ui-router.js"></script>
     <script src="js/app.js"></script>
 </head>
 <body>
-    <header>
-        <figure class="col-lg-2">
-            <img src="#" alt="logo"/>
+    <header class="container-fluid col-md-8 col-lg-8 col-lg-offset-2">
+        <figure class="col-lg-2 ">
+            <img class="logo" src="#" alt="logo" width="200px"/>
         </figure>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Seccion1 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Seccion2</a></li>
-                    <li><a href="../navbar-fixed-top/">Seccion3</a></li>
-                </ul>
-            </div>
+        <nav class="navbar navbar-default col-lg-6 col-lg-offset-4 container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#">Seccion1</a></li>
+                <li><a href="#">Seccion2</a></li>
+                <li><a href="#">Seccion3</a></li>
+                <li><a href="#">Seccion3</a></li>
+            </ul>
+
         </nav>
     </header>
-    <section class="container-fluid">
-        <div class="col-md-6 col-lg-6 col-lg-offset-2">
-
-            <input class="form-control" type="text" placeholder="Buscar"/>
-            <span class="input-group-btn">
-                <button class="btn btn-default" type="button">Buscar</button>
-            </span>
-
+    <section class="main container-fluid">
+        <div class="buscador col-lg-6 col-md-6 col-lg-offset-3">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Ingresa tu Busqueda...">
+                  <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Buscar</button>
+                  </span>
+            </div>
         </div>
-
     </section>
-    <footer>
 
+    <section class="articulos">
+        <article class="item">
+            <h3>Subtitulo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Ad consequuntur ipsa ipsam ipsum quam quidem quisquam sed sunt vel
+            </p>
+        </article>
+        <article class="item">
+            <h3>Subtitulo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Ad consequuntur ipsa ipsam ipsum quam quidem quisquam sed sunt vel
+            </p>
+        </article>
+        <article class="item">
+            <h3>Subtitulo</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Ad consequuntur ipsa ipsam ipsum quam quidem quisquam sed sunt vel
+            </p>
+        </article>
+    </section>
+    <br/>
+    <footer class="panel-footer col-md-8 col-lg-8 col-lg-offset-2">
+        <ul class="nav nav-divider nav-pills navbar-right">
+            <li><a href="#">Link1</a></li>
+            <li><a href="#">Link1</a></li>
+            <li><a href="#">Link1</a></li>
+        </ul>
     </footer>
 </body>
 </html>

@@ -1,0 +1,26 @@
+.logo{
+    width: 90px;
+    height: 60px;
+    background-color: gey;
+}
+.main{
+    height: 300px;
+}
+
+.main .buscador{
+    margin-top:100px ;
+}
+
+.articulos{
+    /*border: solid 1px darkred;*/
+    text-align: center;
+    padding-top: 42px;
+}
+.articulos .item {
+    display: inline-block;
+    width: 255px;
+    /*border: solid 1px mediumvioletred;*/
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: #F0F0F0;
+}
