@@ -5,22 +5,22 @@ var mod = angular.module('myapp',['ui.router']); //Creamos un modulo de angular
 mod.config(function($stateProvider, $urlRouterProvider){
 
  $stateProvider
-     .state('seccion1',{
-         url: '/seccion1',
-         templateUrl: 'template/template1.html',
-         controller: 'primerCtrl'
+     .state('home',{
+         url: '/home',
+         templateUrl: 'templates/buscador.html',
+         controller: 'buscadorCtrl'
      })
 
-     .state('seccion2',{
-         url: '/seccion2',
-         templateUrl: 'template/template2.html',
-         controller: 'segundoCtrl'
+     .state('resultados',{
+         url: '/resultados',
+         templateUrl: 'templates/resultados.html',
+         controller: 'resultadosCtrl'
      })
-    $urlRouterProvider.otherwise('/seccion1');
+    $urlRouterProvider.otherwise('/home');
 
 });
 
-mod.controller('primerCtrl', function($scope,$state){
+mod.controller('buscadorCtrl', function($scope,$state){
     console.log('Primer Controlador');
 
     $scope.enviarForm = function(){
@@ -40,7 +40,7 @@ mod.controller('primerCtrl', function($scope,$state){
     }
 });
 
- mod.controller('segundoCtrl', function($scope,$http){
+ mod.controller('resultadosCtrl', function($scope,$http){
      console.log('Segungo controlador');
      $scope.busqueda = ''
      //$http.get('https://api.mercadolibre.com/sites/MLA/search?q=ipod%20nano')
