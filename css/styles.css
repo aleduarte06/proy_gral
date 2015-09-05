@@ -1,3 +1,9 @@
+body{
+    font-size: 12px;
+    font-family: 'Open Sans',"Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #707478;
+}
+
 .contenedor{
 
 }
@@ -50,5 +56,12 @@
     /*border: solid 1px;*/
 /*}*/
 .imagen_resultado{
-    height: 130px;
+    height: 110px;
+}
+h1, h2, h3, h4, h5, h6{
+    margin-top: 0;
+}
+.ver{
+    border-left: #E0DDDD dashed 1px;
+    height: 120px;
 }

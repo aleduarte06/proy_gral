@@ -12,7 +12,7 @@ mod.config(function($stateProvider, $urlRouterProvider){
      })
 
      .state('resultados',{
-         url: '/resultados',
+         url: '/resultados?q',
          templateUrl: 'templates/resultados.html',
          controller: 'resultadosCtrl'
      })
@@ -20,60 +20,25 @@ mod.config(function($stateProvider, $urlRouterProvider){
 
 });
 
-mod.controller('buscadorCtrl', function($scope,$state){
+mod.controller('buscadorCtrl', function($scope,$state,$http){
     console.log('Primer Controlador');
-
-    $scope.enviarForm = function(){
-
-        $scope.datos = [{
-            nombre:$scope.nombre,
-            apellido:$scope.apellido,
-            sexo:$scope.sexo,
-            email:$scope.email,
-            tuFrase:$scope.tuFrase
-        }];
-        console.log($scope.datos);
-    };
-    $scope.goSeccion2 = function(){
-        $state.go('seccion2',{
-        });
+    $scope.busqueda = '';
+    $scope.enviar = function(){
+        $state.go('resultados',{q:$scope.busqueda})
     }
+
 });
 
- mod.controller('resultadosCtrl', function($scope,$http){
-     console.log('Segungo controlador');
-     $scope.busqueda = ''
-     //$http.get('https://api.mercadolibre.com/sites/MLA/search?q=ipod%20nano')
-     //    .then(function(resultado){
-     //       console.log(resultado)
-     //    });
-     $scope.buscar = function(){
-         var url = 'https://api.mercadolibre.com/sites/MLA/search?q='+ $scope.busqueda + '&limit=10'
-         console.log(url);
-         $http.get(url).then(function(res){
-             console.log(res);
-             $scope.resultados = res.data.results;
-         })
-     };
+mod.controller('resultadosCtrl', function($scope,$http,$stateParams){
+    console.log('Segungo controlador');
+    //console.log($stateParams.q);
+    var url = 'https://api.mercadolibre.com/sites/MLA/search?q='+ $stateParams.q + '&limit=10';
+    console.log(url);
+    $http.get(url).then(function(res){
+        console.log(res);
+        $scope.resultados = res.data.results;
 
+    });
 
-     $scope.items = [{
-         id:'1',
-         nombre:'Ale',
-         apellido:'Duarte',
-         email:'aleduarte06@gmail.com'
-     },{
-         id:'2',
-         nombre:'Kike',
-         apellido:'Duarte',
-         email:'kikeduarte@gmail.com'
-     },{
-         id:'3',
-         nombre:'Diego',
-         apellido:'Arias',
-         email:'AriasDiego@gmail.com'
-     }]
-
-
- });
+});
 
