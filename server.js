@@ -1,15 +1,17 @@
 /**
  * Created by aleduarte06 on 5/9/15.
  */
-var liveServer = require("live-server");
+var express = require('express');
+var app = express();
 
-var params = {
-    port: 8181, // Set the server port. Defaults to 8080.
-    host: "0.0.0.0", // Set the address to bind to. Defaults to 0.0.0.0.
-    //root: "/public", // Set root directory that's being server. Defaults to cwd.
-    //open: false, // When false, it won't load your browser by default.
-    //ignore: 'scss,my/templates', // comma-separated string for paths to ignore
-    //file: "index.html", // When set, serve this file for every 404 (useful for single-page applications)
-    wait: 100 // Waits for all changes, before reloading. Defaults to 0 sec.
-};
-liveServer.start(params);
+app.get('/', function (req, res) {
+    res.sendfile('index.html');
+});
+app.use(express.static('./'));
+
+var server = app.listen(3000, function () {
+    var host = server.address().address;
+    var port = server.address().port;
+
+    console.log('Example app listening at http://%s:%s', host, port);
+});

@@ -15,6 +15,21 @@ mod.config(function($stateProvider, $urlRouterProvider){
          url: '/resultados?q',
          templateUrl: 'templates/resultados.html',
          controller: 'resultadosCtrl'
+        })
+
+        .state('registro',{
+         url: '/registro',
+         templateUrl: 'templates/registro.html'
+        })
+
+        .state('ingresar',{
+         url: '/ingresar',
+         templateUrl: 'templates/login.html'
+        })
+
+        .state('recuperar',{
+         url: '/recuperar',
+         templateUrl: 'templates/recuperar.html'
         });
     $urlRouterProvider.otherwise('/home');
 
@@ -37,7 +52,6 @@ mod.controller('resultadosCtrl', function($scope,$http,$stateParams){
     $http.get(url).then(function(res){
         console.log(res);
         $scope.resultados = res.data.results;
-
     });
 
 });
